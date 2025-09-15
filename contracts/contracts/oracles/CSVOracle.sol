@@ -106,6 +106,7 @@ contract CSVOracle is AccessControl {
             }
         }
         
+        require(validAttestations > 0, "No valid attestations to finalize valuation");
         valuation.csvValue = totalValue / validAttestations;
         valuation.finalized = true;
         
