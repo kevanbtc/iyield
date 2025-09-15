@@ -66,7 +66,7 @@ contract CSVVault is ReentrancyGuard, AccessControl {
         vault.collateralAmount = 0;
         vault.tokenAmount = 0;
         
-        // Burn tokens (would need burn function in ERCRWACSV)
+        csvToken.burn(msg.sender, tokenAmount);
         
         payable(msg.sender).transfer(collateralAmount);
         
