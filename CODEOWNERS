@@ -1,0 +1,36 @@
+# iYield Protocol Code Owners
+# 
+# This file defines who must review changes to specific parts of the codebase.
+# Format: path @username
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - require review for all changes
+* @kevanbtc
+
+# Smart Contracts - Critical infrastructure requiring thorough review
+/contracts/ @kevanbtc
+/contracts/contracts/ @kevanbtc
+/contracts/scripts/ @kevanbtc
+/contracts/test/ @kevanbtc
+
+# Frontend Dashboard - User interface and integrations
+/frontend/ @kevanbtc
+/frontend/pages/ @kevanbtc
+/frontend/components/ @kevanbtc
+
+# CI/CD Infrastructure - Deployment and automation
+/.github/ @kevanbtc
+/.github/workflows/ @kevanbtc
+
+# Documentation - Protocol specifications and legal
+/README.md @kevanbtc
+/LICENSE @kevanbtc
+/SECURITY.md @kevanbtc
+/CONTRIBUTING.md @kevanbtc
+/TRADEMARKS.md @kevanbtc
+/PATENTS.md @kevanbtc
+
+# Configuration files - Core project setup
+/package.json @kevanbtc
+/.gitignore @kevanbtc
+/CODEOWNERS @kevanbtc

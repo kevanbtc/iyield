@@ -1,0 +1,43 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
+# Gas reporter files
+gas-report.txt
+
+# Deploy logs
+deployments/localhost-*
+deployments/hardhat-*
+
+# IDE files
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Package manager
+package-lock.json
+yarn.lock
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output
+
+# Build artifacts
+build/
+dist/

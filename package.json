@@ -1,0 +1,66 @@
+{
+  "name": "iyield-protocol",
+  "version": "0.1.0",
+  "description": "iYield Protocol - Insurance-backed RWA tokenization with Compliance-by-Design™",
+  "private": true,
+  "workspaces": [
+    "contracts",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:contracts && npm run install:frontend",
+    "install:contracts": "cd contracts && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "build": "npm run build:contracts && npm run build:frontend",
+    "build:contracts": "cd contracts && npm run compile",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:contracts",
+    "test:contracts": "cd contracts && npm run test",
+    "test:coverage": "cd contracts && npm run test:coverage",
+    "deploy:sepolia": "cd contracts && npm run deploy:sepolia",
+    "deploy:base": "cd contracts && npm run deploy:base",
+    "deploy:arbitrum": "cd contracts && npm run deploy:arbitrum",
+    "dev": "npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm run dev",
+    "start": "npm run start:frontend",
+    "start:frontend": "cd frontend && npm run start",
+    "lint": "npm run lint:contracts && npm run lint:frontend",
+    "lint:contracts": "echo 'No linting configured for contracts'",
+    "lint:frontend": "cd frontend && npm run lint",
+    "clean": "npm run clean:contracts && npm run clean:frontend",
+    "clean:contracts": "cd contracts && npm run clean",
+    "clean:frontend": "cd frontend && rm -rf .next out",
+    "size": "cd contracts && npm run size",
+    "verify": "cd contracts && npm run verify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevanbtc/iyield.git"
+  },
+  "keywords": [
+    "ethereum",
+    "defi",
+    "rwa",
+    "insurance",
+    "csv",
+    "tokenization",
+    "compliance",
+    "oracle",
+    "iyield",
+    "erc-rwa-csv"
+  ],
+  "author": "Kevin BTC <kevanbtc@iyield.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevanbtc/iyield/issues"
+  },
+  "homepage": "https://iyield.io",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}

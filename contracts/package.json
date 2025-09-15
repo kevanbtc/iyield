@@ -1,0 +1,42 @@
+{
+  "name": "@iyield/contracts",
+  "version": "0.1.0",
+  "description": "iYield Protocol smart contracts - ERC-RWA:CSV tokenization with Compliance-by-Design™",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "deploy": "hardhat run scripts/deploy.js",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:base": "hardhat run scripts/deploy.js --network base_sepolia",
+    "deploy:arbitrum": "hardhat run scripts/deploy.js --network arbitrum_sepolia",
+    "verify": "hardhat verify",
+    "size": "hardhat size-contracts",
+    "clean": "hardhat clean"
+  },
+  "keywords": [
+    "ethereum",
+    "solidity",
+    "defi",
+    "insurance",
+    "csv",
+    "rwa",
+    "compliance",
+    "iyield"
+  ],
+  "author": "Kevin BTC <kevanbtc@iyield.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@typechain/hardhat": "^9.0.0",
+    "hardhat": "^2.19.5",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-gas-reporter": "^1.0.9"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.2",
+    "@chainlink/contracts": "^0.6.1"
+  }
+}
