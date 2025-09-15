@@ -56,6 +56,10 @@ contract CSVLiquidityPool is ReentrancyGuard, AccessControl {
     }
     
     function distributeYield() external onlyRole(POOL_MANAGER_ROLE) {
+        require(
+            address(this).balance >= seniorTranche.totalDeposits + juniorTranche.totalDeposits,
+            "Insufficient balance to cover total deposits"
+        );
         uint256 totalYield = address(this).balance - seniorTranche.totalDeposits - juniorTranche.totalDeposits;
         
         if (totalYield > 0) {
