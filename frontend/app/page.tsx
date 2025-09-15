@@ -178,6 +178,46 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Protocol Dashboard Navigation */}
+        <div className="card p-8 mb-12 bg-gradient-to-r from-blue-50 to-purple-50">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            🏛️ Protocol Dashboard
+          </h3>
+          <p className="text-gray-600 mb-6">
+            Access comprehensive tools for CSV tokenization, compliance management, and risk monitoring.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="/dashboard" className="flex items-center justify-center px-6 py-3 bg-white rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors">
+              <div className="text-center">
+                <div className="text-2xl mb-2">📊</div>
+                <div className="font-semibold text-gray-900">Main Dashboard</div>
+                <div className="text-sm text-gray-600">Overview & Analytics</div>
+              </div>
+            </a>
+            <a href="/compliance" className="flex items-center justify-center px-6 py-3 bg-white rounded-lg border border-gray-200 hover:border-green-300 hover:bg-green-50 transition-colors">
+              <div className="text-center">
+                <div className="text-2xl mb-2">🔒</div>
+                <div className="font-semibold text-gray-900">Compliance Center</div>
+                <div className="text-sm text-gray-600">KYC & Regulations</div>
+              </div>
+            </a>
+            <a href="/liquidity" className="flex items-center justify-center px-6 py-3 bg-white rounded-lg border border-gray-200 hover:border-purple-300 hover:bg-purple-50 transition-colors">
+              <div className="text-center">
+                <div className="text-2xl mb-2">🌊</div>
+                <div className="font-semibold text-gray-900">Liquidity Pools</div>
+                <div className="text-sm text-gray-600">Yield & Tranches</div>
+              </div>
+            </a>
+            <a href="/risk" className="flex items-center justify-center px-6 py-3 bg-white rounded-lg border border-gray-200 hover:border-red-300 hover:bg-red-50 transition-colors">
+              <div className="text-center">
+                <div className="text-2xl mb-2">⚠️</div>
+                <div className="font-semibold text-gray-900">Risk Monitoring</div>
+                <div className="text-sm text-gray-600">Portfolio Security</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
         {/* Important Notices */}
         <div className="card p-6 bg-yellow-50 border-yellow-200">
           <div className="flex">
