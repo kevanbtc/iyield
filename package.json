@@ -1,36 +1,42 @@
 {
   "name": "iyield-protocol",
   "version": "1.0.0",
-  "description": "iYield Protocol - Insurance Cash Surrender Value Tokenization Platform",
+  "description": "Advanced tokenized insurance-backed yield notes with on-chain compliance",
   "main": "index.js",
   "scripts": {
-    "install-all": "npm run install-contracts && npm run install-frontend",
-    "install-contracts": "cd contracts && npm install",
-    "install-frontend": "cd frontend && npm install",
-    "build": "npm run build-contracts && npm run build-frontend",
-    "build-contracts": "cd contracts && npm run compile",
-    "build-frontend": "cd frontend && npm run build",
-    "test": "cd contracts && npm run test",
-    "dev-frontend": "cd frontend && npm run dev",
-    "start": "npm run dev-frontend"
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "deploy:localhost": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network mainnet",
+    "verify": "hardhat verify",
+    "node": "hardhat node",
+    "clean": "hardhat clean",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:start": "cd frontend && npm run start"
   },
   "keywords": [
     "defi",
+    "rwa",
     "insurance",
     "tokenization",
-    "rwa",
+    "compliance",
     "csv",
-    "blockchain",
-    "compliance"
+    "erc3643",
+    "patent-pending"
   ],
-  "author": "iYield Protocol Team",
+  "author": "iYield Protocol",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kevanbtc/iyield.git"
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "hardhat": "^2.19.0",
+    "typescript": "^5.0.0"
   },
-  "homepage": "https://iyield.protocol",
-  "engines": {
-    "node": ">=18.0.0"
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "ethers": "^6.0.0"
   }
 }
