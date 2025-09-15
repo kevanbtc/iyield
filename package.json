@@ -1,0 +1,48 @@
+{
+  "name": "iyield-protocol",
+  "version": "0.1.0",
+  "description": "The Infrastructure Standard for Insurance-Backed RWAs",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm install",
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "deploy:sepolia": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:base": "npx hardhat run scripts/deploy.js --network base",
+    "deploy:arbitrum": "npx hardhat run scripts/deploy.js --network arbitrum",
+    "dev": "cd dashboard && npm run dev",
+    "build": "npx hardhat compile && cd dashboard && npm run build",
+    "lint": "npx hardhat check && cd dashboard && npm run lint"
+  },
+  "keywords": [
+    "DeFi",
+    "RWA",
+    "insurance",
+    "tokenization",
+    "ethereum",
+    "compliance",
+    "ERC-RWA-CSV"
+  ],
+  "author": "iYield Protocol Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevanbtc/iyield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevanbtc/iyield/issues"
+  },
+  "homepage": "https://github.com/kevanbtc/iyield#readme",
+  "devDependencies": {
+    "hardhat": "^2.19.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^5.7.2",
+    "chai": "^4.3.10"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "@chainlink/contracts": "^0.8.0"
+  }
+}
