@@ -25,13 +25,15 @@ iYield Protocol is the **first comprehensive platform** for tokenizing insurance
 ```
 contracts/
 ├── core/
-│   ├── ERCRWACSV.sol           # Main token with compliance features
-│   ├── CSVVault.sol            # Collateralized issuance and burn-on-redeem
+│   ├── ERCRWACSV.sol           # Enhanced token with Rule 144/Reg S compliance
+│   ├── CSVVault.sol            # Carrier concentration & vintage controls  
 │   └── CSVLiquidityPool.sol    # Senior/junior tranche yield distribution
 ├── compliance/
-│   └── ComplianceRegistry.sol  # KYC/AML and jurisdiction management
-└── oracles/
-    └── CSVOracle.sol          # Proof-of-CSV™ multi-attestor system
+│   └── ComplianceRegistry.sol  # Enhanced KYC/AML and jurisdiction management
+├── oracles/
+│   └── CSVOracle.sol          # Enhanced 2-of-N consensus with slashing
+└── interfaces/
+    └── IERC_RWA_CSV.sol       # Complete ERC-RWA:CSV interface
 ```
 
 ### Frontend Dashboard
@@ -88,26 +90,31 @@ npx hardhat verify --network sepolia <contract-address>
 
 ## 📊 System Features
 
-### 🔒 Compliance-by-Design™
+### 🔒 Enhanced Compliance-by-Design™
 
-- **Automated KYC/AML** - Real-time verification with major providers
-- **Rule 144 Enforcement** - Automatic lockup period management
-- **Geographic Restrictions** - Jurisdiction-based access controls
-- **Accredited Investor Verification** - SEC compliance automation
+- **Programmatic Rule 144** - Automated holding periods, volume limits, frequency controls
+- **Regulation S Framework** - Geographic restrictions with offshore transfer controls  
+- **Enhanced KYC/AML** - Real-time verification with comprehensive audit trails
+- **Transfer Blocking** - Explicit compliance violations with detailed reasoning
+- **Accredited Investor Verification** - SEC compliance automation with scoring
+- **Jurisdiction Mapping** - Fine-grained geographic access controls
 
-### 🏦 Proof-of-CSV™ Oracle System
+### 🏦 Enhanced Proof-of-CSV™ Oracle System
 
-- **Multi-Party Attestation** - Minimum 2-of-3 oracle consensus
-- **Cryptographic Verification** - Merkle proofs for valuation data
-- **Carrier Credit Rating** - Real-time insurance company risk assessment
-- **IPFS Transparency** - Immutable audit trail for all attestations
+- **2-of-N Signature Consensus** - Configurable threshold with attestor consensus
+- **Attestor Slashing** - Stake-based penalty system for bad actors
+- **Monotonicity Checks** - Prevent sudden valuation drops and stale data
+- **Enhanced Events** - Complete audit trail with full context emission
+- **Cryptographic Verification** - Multi-signature validation with bitmap tracking
+- **IPFS Integration** - Automated disclosure pinning with on-chain CID updates
 
-### 💰 Advanced Yield Distribution
+### 💰 Advanced Risk Management
 
-- **Senior/Junior Tranches** - Risk-adjusted return optimization
-- **Waterfall Distribution** - Automated yield allocation
-- **LTV Management** - Dynamic loan-to-value ratio controls
-- **Liquidation Protection** - Automated risk management
+- **Carrier Concentration Caps** - Hard 30% limits with real-time monitoring
+- **Policy Vintage Gating** - Minimum age requirements for asset backing
+- **Pre-mint Validation** - Comprehensive risk checks before token issuance
+- **Dynamic LTV Controls** - Automated liquidation triggers and ratchets
+- **Emergency Controls** - Circuit breakers with compliance override capabilities
 
 ## 🛡️ Security & Risk Management
 
@@ -175,7 +182,25 @@ npx hardhat verify --network sepolia <contract-address>
 
 ```bash
 cd contracts
+
+# Run basic tests
 npm run test
+
+# Run enhanced compliance tests
+npx hardhat test test/enhanced-compliance.test.js
+
+# Run all tests with coverage
+npm run coverage
+```
+
+### IPFS Disclosure Management
+
+```bash
+# Pin disclosure documents
+npx ts-node scripts/pin-disclosure.ts <contract-address> DISCLOSURES.md --verify --save-locally
+
+# View disclosure history
+npx ts-node scripts/pin-disclosure.ts <contract-address> DISCLOSURES.md --history
 ```
 
 ### Code Coverage
@@ -195,6 +220,9 @@ npm run gas-report
 ## 📚 Documentation
 
 - [Technical Whitepaper](./docs/Whitepaper.md)
+- [ERC-RWA:CSV Standard](./specs/erc-rwa-csv.md)
+- [Compliance Matrix](./docs/compliance-matrix.md)
+- [Regulatory Disclosures](./DISCLOSURES.md)
 - [Smart Contract Documentation](./contracts/README.md)
 - [Frontend Documentation](./frontend/README.md)
 - [API Reference](./docs/API.md)

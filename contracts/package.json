@@ -6,13 +6,15 @@
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
+    "test:enhanced": "hardhat test test/enhanced-compliance.test.js",
     "deploy": "hardhat run scripts/deploy.js",
     "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
     "verify": "hardhat verify",
     "coverage": "hardhat coverage",
     "gas-report": "REPORT_GAS=true hardhat test",
     "clean": "hardhat clean",
-    "node": "hardhat node"
+    "node": "hardhat node",
+    "pin-disclosure": "npx ts-node ../scripts/pin-disclosure.ts"
   },
   "keywords": [
     "solidity",
@@ -30,6 +32,9 @@
     "hardhat": "^2.19.0"
   },
   "dependencies": {
-    "@chainlink/contracts": "^0.8.0"
+    "@chainlink/contracts": "^0.8.0",
+    "ipfs-core": "^0.18.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0"
   }
 }
