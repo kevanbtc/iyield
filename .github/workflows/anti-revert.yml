@@ -1,0 +1,15 @@
+name: anti-revert
+on: [pull_request]
+jobs:
+  block-destructive-prs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Detect deletions in protected paths
+        run: |
+          git fetch origin "${{ github.base_ref }}" --depth=1
+          DELETED=$(git diff --name-status origin/${{ github.base_ref }}...HEAD | awk '$1=="D"{print $2}')
+          echo "Deleted files:"; echo "$DELETED"
+          echo "$DELETED" | grep -E '^(contracts/(core|compliance|oracles)/|frontend/app/(dashboard|risk|compliance|liquidity)/|docs/|specs/)' && {
+            echo "Protected paths deleted. Failing."; exit 1; } || echo "No protected deletions."
