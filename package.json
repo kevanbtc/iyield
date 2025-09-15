@@ -1,0 +1,33 @@
+{
+  "name": "iyield-protocol",
+  "version": "1.0.0",
+  "description": "iYield Protocol - Insurance-backed RWA tokenization with Proof-of-CSV",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev:contracts && npm run dev:frontend",
+    "dev:contracts": "cd contracts && npx hardhat node",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:contracts && npm run build:frontend",
+    "build:contracts": "cd contracts && npx hardhat compile",
+    "build:frontend": "cd frontend && npm run build",
+    "test": "npm run test:contracts",
+    "test:contracts": "cd contracts && npx hardhat test",
+    "deploy": "cd contracts && npx hardhat run scripts/deploy.js",
+    "lint": "npm run lint:contracts && npm run lint:frontend",
+    "lint:contracts": "cd contracts && npx solhint 'contracts/**/*.sol'",
+    "lint:frontend": "cd frontend && npm run lint"
+  },
+  "keywords": [
+    "defi",
+    "rwa",
+    "insurance",
+    "tokenization",
+    "compliance",
+    "ethereum"
+  ],
+  "author": "iYield Protocol",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
