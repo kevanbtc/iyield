@@ -52,7 +52,7 @@ contract ERCRWACSV is ERC721, AccessControl, Pausable {
     /**
      * @dev Update CSV valuation with oracle data
      */
-    function updateCSVValuation(uint256 tokenId, uint256 csvValue, string memory merkleProof)
+    function updateCSVValuation(uint256 tokenId, uint256 csvValue, bytes32[] memory merkleProof)
         external onlyRole(ORACLE_ROLE) {
         require(_exists(tokenId), "Token does not exist");
         
