@@ -1,0 +1,105 @@
+{
+  "name": "iyield",
+  "version": "1.0.0",
+  "description": "Intelligent Yield Management Platform with comprehensive ownership controls",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "setup:owner": "node scripts/setup-owner.js",
+    "verify:ownership": "node scripts/verify-ownership.js",
+    "emergency:shutdown": "node scripts/emergency-shutdown.js",
+    "verify:emergency-ownership": "node scripts/emergency-ownership.js",
+    "recovery:initialize": "node scripts/recovery-init.js",
+    "security:audit": "npm audit && node scripts/security-check.js",
+    "compliance:check": "node scripts/compliance-check.js",
+    "governance:report": "node scripts/governance-report.js"
+  },
+  "keywords": [
+    "yield",
+    "finance",
+    "investment",
+    "portfolio",
+    "ownership",
+    "governance",
+    "security",
+    "fintech"
+  ],
+  "author": {
+    "name": "Kevin BTC",
+    "email": "kevan@iyield.com",
+    "url": "https://github.com/kevanbtc"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevanbtc/iyield.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kevanbtc/iyield/issues"
+  },
+  "homepage": "https://github.com/kevanbtc/iyield#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.1",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0",
+    "crypto": "^1.0.1",
+    "speakeasy": "^2.0.0",
+    "qrcode": "^1.5.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "eslint": "^8.52.0",
+    "supertest": "^6.3.3",
+    "@types/jest": "^29.5.7"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/test/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "error"
+    }
+  },
+  "private": true,
+  "ownership": {
+    "locked": true,
+    "owner": "Kevin BTC",
+    "email": "kevan@iyield.com",
+    "github": "kevanbtc",
+    "lastVerified": "2024-01-01T00:00:00.000Z",
+    "securityLevel": "maximum",
+    "governanceRequired": true
+  }
+}
