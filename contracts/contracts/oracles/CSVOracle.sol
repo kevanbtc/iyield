@@ -3,7 +3,6 @@ pragma solidity ^0.8.19;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
-import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 import "../interfaces/IERC_RWA_CSV.sol";
 
 /**
@@ -13,7 +12,6 @@ import "../interfaces/IERC_RWA_CSV.sol";
  */
 contract CSVOracle is AccessControl, ICSVOracle {
     using ECDSA for bytes32;
-    using MessageHashUtils for bytes32;
     
     // Role definitions
     bytes32 public constant ATTESTOR_ROLE = keccak256("ATTESTOR_ROLE");
@@ -108,7 +106,7 @@ contract CSVOracle is AccessControl, ICSVOracle {
         
         // Verify signature
         bytes32 messageHash = keccak256(abi.encodePacked(csv, merkleRoot, block.timestamp, msg.sender));
-        bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
+        bytes32 ethSignedMessageHash = ECDSA.toEthSignedMessageHash(messageHash);
         address signer = ethSignedMessageHash.recover(signature);
         require(signer == msg.sender, "Invalid signature");
         
